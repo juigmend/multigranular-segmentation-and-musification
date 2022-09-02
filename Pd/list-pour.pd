@@ -1,0 +1,15 @@
+#N canvas 325 351 369 257 16;
+#X obj 81 154 list;
+#X obj 13 54 list split 1;
+#X obj 71 84 t b l;
+#X obj 71 114 del;
+#X obj 13 194 outlet;
+#X obj 13 14 inlet;
+#X text 11 225 Juan Ignacio Mendoza Garay - 2018;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 0 1;
+#X connect 3 0 0 0;
+#X connect 5 0 1 0;

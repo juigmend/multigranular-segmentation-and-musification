@@ -1,0 +1,90 @@
+#N canvas 845 204 407 562 12;
+#X obj 72 349 *~;
+#X obj -5 239 vcf~ 1;
+#X obj -5 -81 inlet~;
+#X obj 191 421 outlet~;
+#X obj 14 159 sig~;
+#X obj 74 69 t b a;
+#X obj 235 39 s \$0-q;
+#X obj 34 189 r \$0-q;
+#X text 234 84 env.time;
+#X msg 90 209 0 \, 100 \$1;
+#X obj 90 179 f;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-env 100 float 1;
+#A 0 0 0.000113847 0.00196519 0.0101087 0.0313407 0.0730138 0.140965
+0.237564 0.360343 0.501567 0.648889 0.787009 0.900048 0.974179 1 0.999308
+0.997236 0.99379 0.988982 0.98283 0.975354 0.96658 0.956539 0.945265
+0.932797 0.919177 0.904451 0.888671 0.871887 0.854157 0.835539 0.816095
+0.795887 0.774982 0.753446 0.731348 0.708756 0.685741 0.662374 0.638723
+0.61486 0.590855 0.566774 0.542687 0.518658 0.494754 0.471035 0.447561
+0.424391 0.40158 0.37918 0.357238 0.335803 0.314915 0.294613 0.274934
+0.255908 0.237564 0.219925 0.203012 0.186841 0.171424 0.156771 0.142886
+0.129771 0.117424 0.105839 0.0950085 0.0849193 0.0755573 0.0669049
+0.0589418 0.0516457 0.044992 0.0389541 0.0335039 0.0286117 0.0242469
+0.0203775 0.0169713 0.0139953 0.0114166 0.00920214 0.0073193 0.00573591
+0.00442061 0.003343 0.00247385 0.00178534 0.00125116 0.000846754 0.00054941
+0.000338423 0.00019519 0.000103304 4.86219e-05 1.93118e-05 5.86634e-06
+1.09287e-06 6.17076e-08;
+#X coords 0 1 99 0 123 60 1;
+#X restore 233 129 graph;
+#X obj 191 391 *~;
+#X obj 316 -21 s \$0-et;
+#X text 234 61 q (resonance);
+#X text 234 73 transposing factor;
+#X obj 74 39 r \$0-transfac;
+#X obj 275 9 s \$0-transfac;
+#X obj 155 -81 inlet ec;
+#X obj 155 -51 s \$0-env;
+#X text 159 -27 envelope;
+#X obj 54 -81 inlet f v;
+#X obj 54 -51 unpack f f;
+#X obj 235 -81 inlet q tf et;
+#X obj 235 -51 unpack f f f;
+#X obj 138 149 r \$0-et;
+#X obj 14 129 t a a;
+#X obj 177 38 t a a;
+#X obj 107 99 select 0;
+#X obj 90 149 bang;
+#X obj 209 241 vline~;
+#X msg 209 211 \$1 \, 20;
+#X obj 90 239 line;
+#X obj 90 269 tabread \$0-env;
+#X obj 90 319 vline~;
+#X msg 90 293 \$1 50;
+#X text 86 447 Juan Ignacio Mendoza Garay - 2022;
+#X obj 54 99 * 1;
+#X text 62 -30 frequency;
+#X text 62 -18 amplitude;
+#X connect 0 0 12 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 1 1;
+#X connect 5 0 37 0;
+#X connect 5 1 37 1;
+#X connect 7 0 1 2;
+#X connect 9 0 32 0;
+#X connect 10 0 9 0;
+#X connect 12 0 3 0;
+#X connect 16 0 5 0;
+#X connect 18 0 19 0;
+#X connect 21 0 22 0;
+#X connect 22 0 37 0;
+#X connect 22 1 27 0;
+#X connect 23 0 24 0;
+#X connect 24 0 6 0;
+#X connect 24 1 17 0;
+#X connect 24 2 13 0;
+#X connect 25 0 10 1;
+#X connect 26 0 4 0;
+#X connect 27 0 28 0;
+#X connect 27 1 31 0;
+#X connect 28 1 29 0;
+#X connect 29 0 10 0;
+#X connect 30 0 12 1;
+#X connect 31 0 30 0;
+#X connect 32 0 33 0;
+#X connect 33 0 35 0;
+#X connect 34 0 0 1;
+#X connect 35 0 34 0;
+#X connect 37 0 26 0;

@@ -1,0 +1,59 @@
+#N canvas 69 203 685 322 10;
+#X obj 371 187 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 371 201 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 371 151 bng 15 125 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 371 173 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 371 21 inlet;
+#X obj 18 181 spigot;
+#X obj 371 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 371 229 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 98 201 spigot;
+#X obj 178 221 spigot;
+#X obj 258 241 spigot;
+#X obj 338 261 spigot;
+#X obj 18 211 s \$1-s_row_1;
+#X obj 98 231 s \$1-s_row_2;
+#X obj 178 251 s \$1-s_row_3;
+#X obj 258 271 s \$1-s_row_4;
+#X obj 338 291 s \$1-s_row_5;
+#X text 23 48 ARGUMENTS:;
+#X text 33 58 \$1 : parent's Pd number (\$0);
+#X text 33 68 \$2 : column number;
+#X obj 487 101 route 1 2 3 4 5;
+#X text 23 98 RECEIVES:;
+#X text 23 138 SENDS:;
+#X text 23 8 INLETS;
+#X text 33 18 1) trigger (any);
+#X text 33 148 \$1-s_row_[row number] : trigger (any);
+#X obj 487 21 r \$1-r_col_\$2;
+#X text 33 108 \$1-r_col_\$2 : list [row \, value];
+#X text 452 292 Juan Ignacio Mendoza G. - 2021;
+#X connect 0 0 8 1;
+#X connect 1 0 9 1;
+#X connect 2 0 5 0;
+#X connect 2 0 8 0;
+#X connect 2 0 9 0;
+#X connect 2 0 10 0;
+#X connect 2 0 11 0;
+#X connect 3 0 5 1;
+#X connect 4 0 2 0;
+#X connect 5 0 12 0;
+#X connect 6 0 10 1;
+#X connect 7 0 11 1;
+#X connect 8 0 13 0;
+#X connect 9 0 14 0;
+#X connect 10 0 15 0;
+#X connect 11 0 16 0;
+#X connect 20 0 3 0;
+#X connect 20 1 0 0;
+#X connect 20 2 1 0;
+#X connect 20 3 6 0;
+#X connect 20 4 7 0;
+#X connect 26 0 20 0;
+#X coords 0 -1 1 1 17 95 2 370 150;
