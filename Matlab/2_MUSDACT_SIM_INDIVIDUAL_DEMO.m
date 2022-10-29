@@ -4,21 +4,22 @@
 %                  MEAN ABSOLUTE DEVIATION AND CLASSIFICATION                  %
 %                  OF WEARABLE ACCELEROMETRY FOR INDIVIDUALS                   %
 %                                                                              %
-%                               25 OCTOBER, 2022                               %
+%                               29 OCTOBER, 2022                               %
 %                                                                              %
 %                          Juan Ignacio Mendoza Garay                          %
 %                               doctoral student                               %
 %                 Department of Music, Art and Culture Studies                 %
-%                            University of Jyv?skyl?                           %
+%                            University of Jyväskylä                           %
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% CITATION A.P.A
+% CITATION A.P.A.
 
 % Mendoza, J.I., Danso, A., Luck, G., Rantalainen, T., Palmberg., L, & Chastin, S. (2022). 
-% Musification of Accelerometry Data Towards Raising Awareness of Physical Activity. 
-% Conference on Sonification of Health and Environmental Data SoniHED, 
-% 27-28 October 2022, Stockholm, Sweden.
+% Musification of Accelerometry Data Towards Raising Awareness of Physical Activity.
+% In Pauletto, S., Delle Monache, S. and Selfridge, R. (Eds) Proceedings of the Conference on 
+% Sonification of Health and Environmental Data (SoniHED 2022), Stockholm, Sweden. ISBN: 978-91-8040-358-0 
+% https://doi.org/10.5281/zenodo.7243874 
 
 % ------------------------------------------------------------------------------
 
@@ -69,7 +70,7 @@ common.hour_end   = 0; % <---
 % Participants' data:
 
 i_p = i_p + 1;
-info.data(i_p).fname_in    = 'SIM_LOW.mat';   % <--- file with MAD and activity classes, with extension
+info.data(i_p).fname_in    = 'SIM_LOW.mat';  % <--- file with MAD and activity classes, with extension
 info.data(i_p).descr.short = 'LO';           % <---
 info.data(i_p).descr.long  = 'LOW ACTIVITY'; % <---
 info.data(i_p).mn_offset   = 0 ; % <--- offset in 5s epochs (h.m.s) so that day 1 and hour 0 is 00:00:00 (H:MM:SS)
@@ -77,7 +78,7 @@ info.data(i_p).mn_offset   = 0 ; % <--- offset in 5s epochs (h.m.s) so that day 
 % . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
 i_p = i_p + 1;
-info.data(i_p).fname_in    = 'SIM_HIGH.mat';    % <--- file with MAD and activity classes, with extension
+info.data(i_p).fname_in    = 'SIM_HIGH.mat';  % <--- file with MAD and activity classes, with extension
 info.data(i_p).descr.short = 'HI';            % <---
 info.data(i_p).descr.long  = 'HIGH ACTIVITY'; % <---
 info.data(i_p).mn_offset   = 0 ; % <--- offset in 5s epochs (h.m.s) so that day 1 and hour 0 is 00:00:00 (H:MM:SS)
@@ -91,7 +92,7 @@ info.activity_lbl = {'lying','sitting','upright','walking'};  % <--- class label
 
 process_participants = [1,2]; % <--- process only these participants
 
-info.int_param = []; % <--- integrate with sliding window and compute log: [ width , hop ] in 5s. epochs; [] = don't
+% info.int_param = []; % <--- integrate with sliding window and compute log: [ width , hop ] in 5s. epochs; [] = don't
 
 % info.int_param = [ 12 , 6 ];  % [ 1 , 0.5 ] minute 
 % info.int_param = [ 60 , 30 ]; % [ 5 , 2.5 ] minutes
@@ -101,9 +102,9 @@ info.int_param = [ 120 , 60 ]; %  [ 10 , 5  ] minutes [[[[[[[[[[ WORKS WELL WITH
 
 % The following parameters apply only if data is integrated (info.int_param not empty):
 
-% info.seg.bw          = 2:4:64; % <--- novelty score bandwidth (*) in time units (**)
+% info.seg.bw        = 2:4:64; % <--- novelty score bandwidth (*) in time units (**)
 info.seg.bw          = 2:2:32; % <--- novelty score bandwidth (*) in time units (**) [[[[[[[[[[ WORKS WELL WITH 24-HOUR, 3-VOICE SONIFICATION, 30-90 s. ]]]]]]]]]]
-% info.seg.bw          = 2:2:16; % <--- novelty score bandwidth (*) in time units (**)
+% info.seg.bw        = 2:2:16; % <--- novelty score bandwidth (*) in time units (**)
 info.seg.theta       = 0; % <--- novelty threshold for segmentation boundaries
 info.seg.delta_d     = 2; % <--- tolerance to rectify drifting segmentation boundaries in time units (**)
 info.seg.f_corr_marg = 3; % <--- fraction of the coarser novelty bandwidth to search from the edges for rogue segmentation boundaries
@@ -121,15 +122,15 @@ vis.make.pk_raw  = 1; % <--- display raw novelty peaks (drifting segmentation bo
 vis.make.sb_rec  = 1; % <--- display rectified segmentation boundaries; 0 = don't
 vis.make.seg_act = 1; % <--- display segmented activity; 0 = don't
 
-vis.opt.i_mon    = 2;  % <--- monitor to display figures
+vis.opt.i_mon    = 2; % <--- monitor to display figures
 vis.opt.slow_rec = 0; % <--- 1 = slowly display rectification of segmentation boundaries and elimination of rogue boundaries; 0 = don't
 vis.opt.gray     = 0; % <--- 1 = display in grayscale; 0 = use default chromatic colours
 
 % (***) Activity Score = log3( 1 + int(MAD) )
 
-write_gif_size = [];
-% write_gif_size = [76,1240]; % <--- [height,width] = position of GIF file to save of segmented activity heatmap; [] = don't save GIF
-     write_csv = 1;          % <--- save space-separated CSV files
+% write_gif_size = [];
+  write_gif_size = [76,1240]; % <--- [height,width] = position of GIF file to save of segmented activity heatmap; [] = don't save GIF
+       write_csv = 1;          % <--- save space-separated CSV files
 
 % ------------------------------------------------------------------------------
 if info.seg.max_gran < 2
