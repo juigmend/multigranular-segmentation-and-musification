@@ -4,8 +4,8 @@ function nov = novelty(sm,bw,rs)
 %      Calculates novelty from a distance (A.K.A similarity, dissimilarity) matrix (Foote & Cooper, 2003).
 %
 % SYNTAX:
-%      nov = mcnovelty(sm,bw)
-%      nov = mcnovelty(sm,bw,rs)
+%      nov = novelty(sm,bw)
+%      nov = novelty(sm,bw,rs)
 %
 % INPUT:
 %      sm : similarity matrix (square matrix)
@@ -15,10 +15,10 @@ function nov = novelty(sm,bw,rs)
 % OUTPUT:
 %      nov : a novelty score (ranging from 0 to 1)
 %
-% VERSION: 15 November 2021
+% VERSION: 9 December 2022
 %
 % Juan Ignacio Mendoza
-% University of Jyv?skyl?
+% University of Jyväskylä
 
 window_width = round( bw * 8);
 if rem(window_width,2) % this ensures that the length of the window is even so that the checkerboard can be produced
