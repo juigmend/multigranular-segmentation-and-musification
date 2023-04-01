@@ -1,5 +1,9 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pjBpgJ0FMa0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+<embed type="video/mp4" src="https://www.youtube.com/embed/pjBpgJ0FMa0>
+
+<src="https://www.youtube.com/embed/pjBpgJ0FMa0>
+
 https://www.youtube.com/watch?v=pjBpgJ0FMa0
 https://img.youtube.com/vi/pjBpgJ0FMa0/maxresdefault.jpg
 
@@ -17,3 +21,4 @@ Mendoza, J.I., Danso, A., Luck, G., Rantalainen, T., Palmberg., L, & Chastin, S.
 
 ## License
 All software of my authorship in this page is published under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GNU General Purpose License version 2.</a>
+
