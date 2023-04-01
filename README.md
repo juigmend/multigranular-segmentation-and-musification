@@ -1,7 +1,8 @@
 # Multigranular Segmentation and Musification
 Multigranular segmentation of time-series data and its musical sonification.
 
-[![Video](https://img.youtube.com/vi/pjBpgJ0FMa0/maxresdefault.jpg)](https://youtu.be/pjBpgJ0FMa0 "Video")
+Video:
+[![Video](https://img.youtube.com/vi/pjBpgJ0FMa0/maxresdefault.jpg)](https://youtu.be/pjBpgJ0FMa0 "https://youtu.be/pjBpgJ0FMa0") *https://youtu.be/pjBpgJ0FMa0*
 
 
 More information:
