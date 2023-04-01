@@ -1,21 +1,7 @@
-[![IMAGE ALT TEXT](https://img.youtube.com/vi/pjBpgJ0FMa0/maxresdefault.jpg)](https://youtu.be/pjBpgJ0FMa0 "Video Title")
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pjBpgJ0FMa0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-<embed type="video/mp4" src="https://www.youtube.com/embed/pjBpgJ0FMa0>
-
-<src="https://www.youtube.com/embed/pjBpgJ0FMa0>
-
-https://www.youtube.com/watch?v=pjBpgJ0FMa0
-https://img.youtube.com/vi/pjBpgJ0FMa0/maxresdefault.jpg
-
-
-[![Watch the video](https://img.youtube.com/vi/pjBpgJ0FMa0/maxresdefault.jpg](https://youtu.be/pjBpgJ0FMa0)
-Short explanatory video: <a href="https://youtu.be/pjBpgJ0FMa0">https://youtu.be/pjBpgJ0FMa0</a>
-
 # Multigranular Segmentation and Musification
-
 Multigranular segmentation of time-series data and its musical sonification.
+
+[![Video](https://img.youtube.com/vi/pjBpgJ0FMa0/maxresdefault.jpg)](https://youtu.be/pjBpgJ0FMa0 "Video")
 
 More information:
 
