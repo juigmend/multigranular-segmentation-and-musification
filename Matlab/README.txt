@@ -1,4 +1,4 @@
-DEPENDENCIES:'
+DEPENDENCIES:
 
 - Matlab, tested on 2017b. Maybe Octave works as well.
 
